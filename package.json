@@ -5,7 +5,13 @@
   "repository": "git@github.com:jayremias/tindev.git",
   "author": "Jonathan Bertoldi <jay.east@hotmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev":  "nodemon src/server.js"
+  },
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
