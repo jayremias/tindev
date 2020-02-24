@@ -1,8 +1,8 @@
 const express = require('express');
-const routes = express.Router();
 
-routes.get('/', (req, res) => {
-    return res.json({ok: true});
-});
+const routes = express.Router();
+const DevController = require('./controllers/DevController');
+
+routes.post('/devs', DevController.store);
 
 module.exports = routes;
