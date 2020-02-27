@@ -23,6 +23,7 @@ class Login extends React.Component {
             const response = await api.post('devs', {
                 username: this.state.username
             });
+            console.log(response);
             const { _id } = response.data;
             history.push(`/dev/${_id}`);
         } catch (error) {

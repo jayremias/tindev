@@ -25,8 +25,12 @@ module.exports = {
         if(userExists) {
             return res.json(userExists);
         }
-        
-        response = await axios.get(`https://api.github.com/users/${username}`);
+    
+        try {
+            response = await axios.get(`https://api.github.com/users/${username}`);   
+        } catch (error) {
+            return res.status(error.response.status).json(error.response.data);
+        }
         
         const { avatar_url:avatar, name, bio } = response.data;
 
